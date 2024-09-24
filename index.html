@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Password Maker</title>
 </head>
 <body>
     
     <div class="app">
-        <input type="text" id="password-output" value="Password generator" readonly>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable">
+            <b>Help</b>
+            <i class="fa-regular fa-circle-question" style="color: black;"></i>
+          </button>
+        
+        <input type="text" id="password-output" value="Password Generator" readonly>
 
         <div class="range-container">
             <input type="range" name="" id="password-length" min="4" max="24" value="8" oninput="document.getElementById('display-password-length').value=this.value">
@@ -31,14 +38,63 @@
             <input type="checkbox" name="" id="symbols">
             <label for="symbols">!-?</label>
         </div>
+
+        <div class="customer-text">
+            <p id="customer-text-ask" onclick="show_input_word()">Ajouter un mot personnalisé</p>
+
+            <div  id="customer-text-input">
+            <input type="text" name="customer-text" id="input" placeholder="Entrez votre texte ici">
+
+        </div>
+        </div>
         
 
-        <button id="generateButton">Generate Password</button>
+        <button id="generateButton">Générer le mot de passe</button>
 
     </div>
 
+  <!-- Scrollable modal -->
+  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Comment utiliser le générateur ?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h3>Comment utiliser le générateur de mot de passe</h3>
+            <p>Notre générateur de mot de passe vous permet de créer des mots de passe sécurisés et personnalisés selon vos besoins. Voici comment vous pouvez l'utiliser :</p>
+            
+            <h3>1- Choix des caractères :</h3>
+            <p>Vous pouvez sélectionner les types de caractères que vous souhaitez inclure dans votre mot de passe en cochant les cases correspondantes :</p>
+            <i>
+              <b>a-z :</b> Inclut des lettres minuscules (de 'a' à 'z').<br>
+              <b>A-Z :</b> Inclut des lettres majuscules (de 'A' à 'Z').<br>
+              <b>0-9 :</b> Inclut des chiffres (de '0' à '9').<br>
+              <b>!-? :</b> Inclut des symboles spéciaux (comme '!', '@', '#', etc.).<br>
+            </i>
+            
+            <h3>2- Ajout de mots ou de chaînes de caractères personnalisées :</h3>
+            <p>Si vous souhaitez inclure un ou plusieurs mots spécifiques dans votre mot de passe (par exemple, un surnom ou un mot facile à mémoriser), vous pouvez les saisir dans le champ prévu à cet effet. Le générateur intégrera ces mots dans le mot de passe final.</p>
+            <br>
+            <b><i>NB: Pour ajouter un mot personnalisé cliquez sur "Ajouter un mot de personnalisé" </i></b><br>
+            <h3>3- Longueur du mot de passe :</h3>
+            <p>Utilisez le curseur pour définir la longueur souhaitée du mot de passe. Vous pouvez choisir une longueur comprise entre 4 et 24 caractères. Plus le mot de passe est long, plus il est sécurisé.</p>
+            <br>
+            <b><i>NB: La longueur par défaut du mot de passe est de "8 caractères" </i></b><br>
+            <h3>4- Génération du mot de passe :</h3>
+            <p>Une fois que vous avez fait vos sélections, cliquez sur le bouton de génération. Le mot de passe sera généré en fonction de vos choix et affiché sur l'écran.</p>
+        </div>            
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   
 
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
