@@ -31,6 +31,7 @@ function  generatePassword()
        document.execCommand("copy");// Permet de copier le texte sélectionner
         
        generateButton.textContent = "Copied !";
+        alert('Password copied successfully');
 
        setTimeout(()=> {
         generateButton.textContent = "Generate Password";
