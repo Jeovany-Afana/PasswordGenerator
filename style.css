@@ -116,3 +116,22 @@ button:hover {
 button:active {
   transform: scale(1.05);
 }
+
+#customer-text-ask
+  {
+    text-decoration: underline;
+    font-style: italic;
+    cursor: pointer;
+  }
+
+#customer-text-input
+{
+  display: none;
+}
+
+#input
+  {
+    border-radius: 10px;
+    translate: 2s ease;
+    background-color: #c6f3cc;
+  }
